@@ -1,0 +1,209 @@
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mid2BMS BMS Improved Development Environment</title>
+
+<script src="./jquery-1.11.0.min.js"></script>
+<script>
+
+</script>
+
+<style><!--
+.hidimg {
+  display: none;
+}
+body {
+  background-image: url("./background_large.png");
+  background-attachment:fixed;
+  background-color:#79ACD4;
+  background-repeat:repeat-x;
+}
+--></style>
+
+</head>
+<body><table align="center"><tr><td><div align="left">
+<h1>Mid2BMS機能解説(reference)</h1><br />
+<br />
+
+<center><h2>tabPage1 タブ</h2><br />
+<a href="./reference_img/ref_001.png"><img src="./reference_img/ref_001.png" width="480px"></a></center><br /><br />
+上級者モードに変更するボタンです。<br />
+　これにチェックを入れると、設定の数が飛躍的に増えます。<br />
+　しかし、チェックを入れないと使えない機能が多すぎるため、<br />
+　割と初期の段階でチェックを入れることになりそうです。<br />
+<hr>
+
+<center><h2>[1]Mid2MML タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+ 元になるmidiファイルのあるフォルダです。ドラッグアンドドロップで指定出来ます。<br />
+　このフォルダ直下に諸ファイルが格納されます。<br />
+ 元になるmidiファイルのファイル名です。ドラッグアンドドロップで指定出来ます。<br />
+ 変換対象となる「色」を指定します。詳しくはチュートリアルも参照してください。<br />
+　　　・基本は blue<br />
+　　　・オートメーションやピッチベンドが伴うなら red<br />
+　　　・ポルタメントが掛かっている音は purple<br />
+　　　・キー音にしない音は yellow<br />
+ 配置開始となる #WAVXX 定義番号です。（Mid2BMS内においてwavidと呼ぶことがあります)<br />
+　右にある &lt;= ボタンを押すと、前回の変換結果でまだ埋まっていない番号を指定することが出来ます。<br />
+　（ただし、その数値は Mid2BMS を再起動させると消えてしまうようです。）<br />
+ キー音の一覧を含んだmidiファイルにおいて、（Mid2BMS内において 単音midi と呼ぶことがあります）<br />
+　音と音の間の時間をどれくらいの長さにするか、拍単位で指定します。<br />
+　BPMが高い(200を大きく超えるような)曲の場合、この数値を大きくする必要があるでしょう。<br />
+ キー音のファイル名に「Track Name」と「Instrument Name」のどちらを採用するか指定することが出来ますが、<br />
+　ぶっちゃけどっちでもいいです。<br />
+　また、DAWによって適切な選択が異なります。多くのDAWではTrackNameを採用しています。<br />
+ BMSのBGMレーンにのみ配置し、1〜7鍵盤+皿にはオブジェを配置しないようにします。<br />
+　（Mid2BMS内において、レーンの区別のことをBMS Channelと呼ぶことがあります)<br />
+　1つの作品内での2周目以降の変換では、チェックを付けたほうが良さそうです。<br />
+ キー音の一覧を含んだmidiファイル(単音midi)を、トラック同士が重ならないように書き出す。<br /><br />
+　<a href="./reference_img/ref_004b.png"><img src="./reference_img/ref_004b.png" width="320px"></a></center>
+　<a href="./reference_img/ref_004c.png"><img src="./reference_img/ref_004c.png" width="320px"></a></center><br /><br />
+　これは、red modeを選択している場合、さらに追加の効果を得る：<br />
+　BPM変化や複数トラックをまたがるオートメーションを含む場合、適切に処理されるようになる。<br />
+　一方で、ファイルサイズが指数関数的に大きくなるというデメリットもあるため、<br />
+　midiファイルの読み込みサイズに制限のあるDAW(Studio Oneなど)では、<br />
+　常にチェックを入れることは適切ではないかもしれない。<br /><br />
+　<a href="./reference_img/ref_005a.png"><img src="./reference_img/ref_005a.png" width="320px"></a></center><br /><br />
+　<a href="./reference_img/ref_005b.png"><img src="./reference_img/ref_005b.png" width="320px"></a></center>
+　<a href="./reference_img/ref_005c.png"><img src="./reference_img/ref_005c.png" width="320px"></a></center><br /><br />
+ 不必要な一時ファイルを書き出します。<br />
+　主にデバッグに使用しますが、何かの助けになることもあるかもしれません。(訳注：ないです)<br />
+<hr>
+
+<center><h2>トラック名の確認ダイアログ (「変更する」を押した後の画面)</h2><br />
+<a href="./reference_img/ref_008.png"><img src="./reference_img/ref_008.png" width="480px"></a></center><br /><br />
+ トラック名ですが、キー音のファイル名にも使われます。<br />
+ midiノート番号(midiキーボードの鍵盤の位置)が等しい/異なるキー音を、等しい/異なるBMSチャンネル(レーン)に配置します。<br />
+　つまり、バスドラムはバスドラムだけ、スネアはスネアだけ、と分かれて配置されるため、譜面が作りやすくなります。<br />
+ 単にその音色を無視します。<br />
+ 和音を１つのキー音と見なして音切りします。最近出来た機能の割に便利です。<br />
+<hr>
+
+<center><h2>[2]WaveSplitter タブ</h2><br />
+<a href="./reference_img/ref_003.png"><img src="./reference_img/ref_003.png" width="480px"></a></center><br /><br />
+ text5_renamer_array.txt があるフォルダを指定します。ドラッグアンドドロップで指定出来ます。<br />
+　このフォルダの中に諸ファイルが格納されます(うろ覚え)。<br />
+ チェックを入れると、text5_renamer_array.txt を参照せずに、連番で音声を書き出すことが出来ます。<br />
+　単に音切りがしたいだけで、BMSへの配置を自動で行う必要が無い場合にチェックを付けてください。<br />
+　{0:00}で2桁、{0:000}で3桁、{0:0000}で4桁の連番となります。<br />
+　連番の最小の数(origin)を変更したい場合は、Flexible Renamerを使うと良いかもしれません。<br />
+ 入力となるwavファイルがあるフォルダを指定します。ドラッグアンドドロップで指定出来ます。<br />
+ 入力となるwavのファイル名を指定します。<br />
+　ここで、<b>チェックを入れた場合、入力wavファイルは1ファイルとなります。</b>(ファイル名はなんでもよい。)<br />
+　<b>そうでない場合は、入力wavファイルは<br />
+　text5_renamer_array.txt に記載されているような「音色名.wav」の形になります。</b><br />
+　この形になっていない場合は、Flexible Renamerなどでファイルをリネームしてください。<br />
+　どちらが良いかはDAWによっても異なりますし、個人の好みによっても異なります。<br />
+　少なくともパラアウトが出来ないDAWではチェックを入れた方が良いでしょう。<strike>そんなDAW無いか・・・。</strike><br />
+　（訳注：作者の使っていた作曲ソフトであるReason 4にはパラアウト機能がありませんでした。）<br />
+　※このチェックボックスは [1]Mid2MML タブの  tanon_smfを云々 と関連性が高いです。<br />
+ 残響というのは非常に厄介です。<br />
+　リバーブなどはBGM (Mid2BMSで言うyellow) に含めるのが良い場合がありますが、<br />
+　残念ながらそう出来なかった場合もあるでしょう。<br />
+　そのような場合には、ハードディスクやサーバーの容量が無限でない以上、<br />
+　キー音1つあたりの容量を制限しなければならない場合があるかもしれません。<br />
+　これは、残響音がどれほどの小ささになったら無音と見なすか的な値です。<br />
+　ツールチップ読んでください。<br />
+　<img src="./reference_img/ref_006.png"><br />
+　ただし、注意点があります。この方法で残響音をカットした場合、<br />
+　音の末尾にポップノイズが入る可能性があります。<br />
+　後で説明するFade Out Timeを大きくすればポップノイズは回避できますが、<br />
+　今度は音の末尾が丸くなってしまう場合があります。（バグです。）<br />
+　<img src="./reference_img/ref_007.png" width="480px"><br />
+　これらを回避するために、チュートリアルの最後に示したGoldWaveのバッチを用いることを強く勧めますが、<br />
+　まあそこまで気にすることも無いかもしれません。<br />
+フェードイン時間です。<br />
+　ツールチップ読んでください。<br />
+フェードアウト時間です。<br />
+　ツールチップ読んでください。<br />
+ キー音が次に移ったと判断する無音時間です。<br />
+　ここらへんのアルゴリズムは多少複雑なので詳しくは説明しません。<br />
+　※[1]Mid2MML タブの  MarginTime と関連性が高いです。<br />
+　ここの値を調整するというよりは、MarginTimeを調整するという感じだと思います。<br />
+<hr>
+
+続きは気が向いたら書きます。<hr>
+設定とファイルの依存関係<br>
+<a href="./reference_img/izon.png"><img src="./reference_img/izon.png" width="480px"></a></center><br /><br />
+<hr>
+<!--
+
+<center><h2>タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr>
+
+<center><h2>タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr>
+
+<center><h2>タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr>
+
+<center><h2>タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr>
+
+<center><h2>タブ</h2><br />
+<a href="./reference_img/ref_002.png"><img src="./reference_img/ref_002.png" width="480px"></a></center><br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<hr>
+
+-->
+
+<small>
+<b><strike>注：FL Studio 及び Reaper でこのソフトを使用する場合のサポートは行いません。</strike></b><br />
+<b><span style="color:red;">
+  和音切りやクオンタイズ機能など、BMHelperと差別化できる機能も増えてきましたので、
+  2017/10/12を持ちまして、上記の発言を撤回したいと思います。
+  今後ともMid2BMSを宜しくお願いします。</span></b><br />
+Last Update: 2017/10/12<br />
+Since: 2014/04/01<br />
+Copyright (c) 2007-2017 <a href="https://twitter.com/yuinore">yuinore</a>
+</small>
+</div></body>
+</html>

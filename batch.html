@@ -1,0 +1,76 @@
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mid2BMS BMS Improved Development Environment</title>
+<style><!--
+.hidimg {
+  display: none;
+}
+body {
+  background-image: url("./background_large.png");
+  background-attachment:fixed;
+  background-color:#79ACD4;
+  background-repeat:repeat-x;
+}
+--></style>
+
+</head>
+<body><div align="center">
+<br />
+<br />
+おまけ<br>
+<br>
+<h2>SoundEngineで音の末尾の無音をフェードアウトしつつ綺麗に削除するスクリプト</h2>
+(BGM音に対してはこのバッチを適用しないでください。wavの頭に完全な無音がある場合、削除されます。)<br>
+<br>
+<table border=1><tr><td><table border=0 style="padding:1em;"><tr><td><tt>
+[Folder Open]<br>
+<br>
+[Side Insert Silence]<br>
+Param0=0<br>
+Param1=0.002<br>
+Selection=0,-0,-1<br>
+<br>
+[Both Ends Silence Cut]<br>
+Parameter1=-90<br>
+Parameter2=0<br>
+Parameter3=-36<br>
+Parameter4=2<br>
+Selection=0,-0,-1<br>
+<br>
+[Fade Out]<br>
+Selection=-0.002,-0,-1<br>
+<br>
+[Both Ends Silence Cut]<br>
+Parameter1=-90<br>
+Parameter2=0<br>
+Parameter3=-90<br>
+Parameter4=0<br>
+Selection=0,-0,-1<br>
+<br>
+[Folder Save]<br>
+</tt></td></tr></table></td></tr></table><br>
+<br>
+<br>
+<h2>GoldWaveで音の末尾の無音をフェードアウトしつつ綺麗に削除するバッチ</h2><br>
+<br>
+<table border=1><tr><td><table border=0 style="padding:1em;"><tr><td><tt>
+<table>
+<tr><td>Edit</td>	<td>Set Marker/Selection&nbsp;</td>	<td>[T-0] - [T-0]</td></tr>
+<tr><td>Edit</td>	<td>Insert Silence</td>			<td>0.002</td></tr>
+<tr><td>Edit</td>	<td>Set Marker/Selection</td>		<td>[0] - [T-0]</td></tr>
+<tr><td>Edit</td>	<td>AutoTrim</td>			<td>0.002s, -36.00dB, Trailing</td></tr>
+<tr><td>Edit</td>	<td>Set Marker/Selection</td>		<td>[T-0.002] - [T-0]</td></tr>
+<tr><td>Effect&nbsp;</td>	<td>Fade Out &lt;GoldWave*&gt;	</td>	<td>Full volume to silence, linear</td></tr>
+<tr><td>Edit</td>	<td>AutoTrim</td>			<td>0.000s, -90.00dB, Trailing</td></tr>
+</table>
+</tt></td></tr></table></td></tr></table>
+
+<hr>
+<small>
+<b>注：FL Studioでこのソフトを使用する場合のサポートは行いません。</b><br />
+Last Update: 2014/04/01<br />
+Copyright (c) 2007-2014 <a href="https://twitter.com/yuinore">yuinore</a>
+</small>
+</div></body>
+</html>

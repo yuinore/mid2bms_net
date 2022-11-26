@@ -1,0 +1,652 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Mid2BMS Tutorial</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Meiryo UI";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"¥@Meiryo UI";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Century","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"吹き出し ¥(文字¥)";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:0mm;
+	margin-left:42.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Century","serif";}
+span.a
+	{mso-style-name:"吹き出し ¥(文字¥)";
+	mso-style-link:吹き出し;
+	font-family:"Arial","sans-serif";}
+.MsoChpDefault
+	{font-family:"Century","serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	layout-grid:18.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+
+</head>
+
+<body lang=JA style='text-justify-trim:punctuation;background-image:url("background_large.png");background-attachment:fixed;background-color:#79ACD4;background-repeat:repeat-x;'>
+
+<div class=WordSection1 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:30.0pt;font-family:"Meiryo UI"'>Mid2BMS</span><span
+style='font-size:30.0pt;font-family:"Meiryo UI"'>を使ってみた</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-family:"Meiryo UI"'>yuinore</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-family:"Meiryo UI"'>2014/04/01</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph align=center style='margin-left:21.0pt;text-align:
+center'><span style='font-size:25.0pt;font-family:"Meiryo UI"'>第１章<span
+lang=EN-US> Hydrogen Blueback</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１．</span><span lang=EN-US
+style='font-family:"Meiryo UI"'>DTM</span><span style='font-family:"Meiryo UI"'>をする際の特別な注意事項はいくつかありますが、その点を細かく指摘するのはまた別の機会にしましょう。いくつか挙げるとすれば</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>・ベロシティを無闇に使いすぎない（キー音が増加するのを防ぐため）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>・ゲート（音の長さ）を揃える（キー音が増加するのを防ぐため）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>・クオンタイズする（ズレ譜面を作りたい場合でもせめて<span lang=EN-US>192</span>分音符以下に抑えてクオンタイズしましょう）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>などです。必ずしも守る必要はありませんが、可能であればこれに従ったほうがよいでしょう。（ノートオンがクオンタイズされていない<span
+lang=EN-US>midi</span>を使用すると<span lang=EN-US>BMS</span>の配置がずれるという既知のバグがあるので注意）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２．</span><span style='font-family:
+"Meiryo UI"'>まずプロジェクトファイルを開きます。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=260 height=167 id="図 1"
+src="tutorial.files/image001.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３．</span><span style='font-family:
+"Meiryo UI"'>このプロジェクトを、オートメーションの使用具合などを考慮しながら、以下の説明に従って<span lang=EN-US>blue</span>、<span
+lang=EN-US>red</span>、<span lang=EN-US>yellow</span>に分けます。どれかが空集合でも構いません。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=260 height=167 id="図 2"
+src="tutorial.files/image002.jpg"></span><span style='font-family:"Meiryo UI"'>←基本は<span
+lang=EN-US>blue</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=260 height=167 id="図 3"
+src="tutorial.files/image003.jpg"></span><span style='font-family:"Meiryo UI"'>←オートメーションが伴うなら<span
+lang=EN-US>red</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=260 height=169 id="図 4"
+src="tutorial.files/image004.jpg"></span><span style='font-family:"Meiryo UI"'>←キー音にしない音は<span
+lang=EN-US>yellow</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>４．</span><span style='font-family:
+"Meiryo UI"'>ではまずは<span lang=EN-US>blue</span>について音切りをしましょう。<span lang=EN-US>blue</span>プロジェクトを別名で保存し、<span
+lang=EN-US>midi</span>ファイルを書き出す準備をします。不要なトラックを削除して、トラック名を互いに異なるような整合性のあるものにします。半角スペースや全角文字は使用しない方が良いでしょう。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=314 height=201 id="図 10"
+src="tutorial.files/image005.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>５．</span><span lang=EN-US
+style='font-family:"Meiryo UI"'>midi</span><span style='font-family:"Meiryo UI"'>ファイルを保存します</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=314 height=186 id="図 7"
+src="tutorial.files/image006.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>６．</span><span style='font-family:
+"Meiryo UI"'>書き出した<span lang=EN-US>midi</span>ファイルをドラッグ<span lang=EN-US>&amp;</span>ドロップし、「<span
+lang=EN-US>tanon_smf</span>をシーケンスレイヤーとして書き出す」にチェックを入れた後、<span lang=EN-US>Start</span>ボタンを押す</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=287 height=187 id="図 9"
+src="tutorial.files/image007.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>この後トラックリストの確認画面が出ます。「変更する」をクリックしたあと、以下の説明に従って設定を変更してください。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:"Meiryo UI"'>トラック名に誤りがあるトラック　→　トラック名を修正</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BMS</span><span
+style='font-family:"Meiryo UI"'>に<span lang=EN-US>1</span>鍵盤<span lang=EN-US>1</span>レーンとして配置したい場合、</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:21.0pt'><span
+style='font-family:"Meiryo UI"'>特にドラムパートの場合　→　<span lang=EN-US>Drums?</span>にチェック</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:"Meiryo UI"'>特定のトラックを無視したい場合　→　<span lang=EN-US>Ignore?</span>にチェック</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-family:"Meiryo UI"'>和音を１つのキー音として扱いたいトラック　→　<span lang=EN-US>Chord?</span>にチェック</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>７．</span><span style='font-family:
+"Meiryo UI"'>出力された<span lang=EN-US>text3_tanon_smf.mid</span>を<span lang=EN-US>blue</span>プロジェクトに読み込みます。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=266 height=207 id="図 11"
+src="tutorial.files/image008.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>８．</span><span style='font-family:
+"Meiryo UI"'>以下では音源を単一<span lang=EN-US>wav</span>ファイルとするものとして進めます。読み込んだ<span
+lang=EN-US>midi</span>をトラックに配置します。（トラックごとの複数<span lang=EN-US>wav</span>ファイルとする場合は、センドリターンが<span
+lang=EN-US>BGM</span>トラックに追加されることに留意してください。）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=305 height=195 id="図 12"
+src="tutorial.files/image009.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>９．</span><span style='font-family:
+"Meiryo UI"'>ソングの書き出し範囲を適切に設定し、音声を<span lang=EN-US>wav</span>ファイルに出力します。時間がかかりますので、気長に待ちましょう。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=215 height=71 id="図 13"
+src="tutorial.files/image010.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１０．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>下図のようにファイルをドラッグ＆ドロップし<b><span
+lang=EN-US>(</span>注：<span lang=EN-US>wavesplitter_input.txt</span>の代わりに<span
+lang=EN-US>text5_renamer.txt</span>をドラッグ＆ドロップしてください<span lang=EN-US>)</span></b>、単一ファイルである場合はチェックボックスにチェックを付けます。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=350 height=205 id="図 14"
+src="tutorial.files/image011.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１１．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>Split</span><span
+style='font-family:"Meiryo UI"'>ボタンを押して音切りを開始します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１２．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>text6_bms.txt</span><span
+style='font-family:"Meiryo UI"'>のバックアップコピーを取り、別名で保存します。その上で元の<span lang=EN-US>text6_bms.txt</span>ファイルを<span
+lang=EN-US>text6_bms.bms</span>に名前変更し、</span><s><span style='font-size:9.0pt;
+font-family:"Meiryo UI"'>更にいくつかの重要な定義を追加します。その重要な定義とは、<span lang=EN-US>#TITLE</span>、<span
+lang=EN-US>#BPM</span>、<span lang=EN-US>#PLAYER</span>です。（可能であれば<span
+lang=EN-US>BMSE</span>を用いることが望ましい。）</span></s><span style='font-family:"Meiryo UI"'>その後、この<span
+lang=EN-US>bms</span>ファイルを<span lang=EN-US>renamed/</span>フォルダにコピーします。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=284 height=202 id="図 15"
+src="tutorial.files/image012.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１３．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>BMS</span><span
+style='font-family:"Meiryo UI"'>プレイヤーで<span lang=EN-US>BMS</span>を開き、正常に変換されたかどうか確認します。正常に変換できていなかった場合はここからが本当の闘いとなります。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=236 height=187 id="図 16"
+src="tutorial.files/image013.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph align=center style='margin-left:21.0pt;text-align:
+center'><span style='font-size:25.0pt;font-family:"Meiryo UI"'>第２章 <span
+lang=EN-US>RED ZONE</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１４．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>次に<span lang=EN-US>red</span>を音切りして行きましょう。<span
+lang=EN-US>red</span>というのは簡単には「困ったちゃん」のことであり、「簡単には音切り出来ないがキー音にしたい音たち」のことです。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１５．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>red</span><span
+style='font-family:"Meiryo UI"'>で音切りをする場合も、<span lang=EN-US>midi</span>書き出し用のプロジェクトを作ります。先ほどと同様に、不要なトラックを削除し、適切にトラック名などを設定します。ただし今回は更に、<b>「同じ音は１回」</b>という原則を守る必要があります。例えば以下の画像では、緑色のクリップ及び青色のクリップは、それぞれ全く同じ音を出すので、それぞれ１度だけ出現しなければなりません。通常は最初のクリップを残して残りを削除します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=249 height=270 id="図 17"
+src="tutorial.files/image014.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１６．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><s><span style='font-size:9.0pt;font-family:"Meiryo UI"'>もし<span
+lang=EN-US>MidiSeparator</span>（後述）を使用する場合は、</span></s><span style='font-family:
+"Meiryo UI"'>ノートレーンとオートメーションレーンを同一の<span lang=EN-US>Midi</span>トラックに格納します。（注：<span
+lang=EN-US>[1]Mid2MML</span>の画面上で「<span lang=EN-US>tanon_smf</span>をシーケンスレイヤーとして書き出す」にチェックを入れる場合はこの限りではない）</span><span
+style='font-size:9.0pt;font-family:"Meiryo UI"'>（どのような範囲が同一の<span lang=EN-US>Midi</span>トラックとして書き出されるかは<span
+lang=EN-US>DAW</span>によって異なると思いますのでここでは詳しくは書きません。）<s><span lang=EN-US>red</span>に分類される音が少ない場合は<span
+lang=EN-US>MidiSeparator</span>を利用する必要はありません。</s></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=282 height=180 id="図 19"
+src="tutorial.files/image015.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１７．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>midi</span><span
+style='font-family:"Meiryo UI"'>ファイルを書き出します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１８．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>書き出したファイルを変換します。この際、<span
+lang=EN-US>(1)</span>チェックを２箇所付けること<span lang=EN-US> (2)</span></span><s><span
+style='font-size:9.0pt;font-family:"Meiryo UI"'>先ほどバックアップしたファイルの<span
+lang=EN-US>WAV</span>定義で、使用されているものの一番大きい番号よりいくつか大きい定義番号を入力すること の２つに注意します。</span></s><span
+style='font-family:"Meiryo UI"'>（注：「<span lang=EN-US>Vacant Wavid</span>」のすぐ右にある「<span
+lang=EN-US>&lt;=</span>」ボタンを押すことでこの値を自動補完することができます）</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=291 height=207 id="図 21"
+src="tutorial.files/image016.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=409 height=244 id="図 20"
+src="tutorial.files/image017.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>１９．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>Start</span><span
+style='font-family:"Meiryo UI"'>を押して変換開始します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２０．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><s><span style='font-family:"Meiryo UI"'>以下では<span lang=EN-US>Separate
+Midi </span>を使用する場合ものとして解説します。<span lang=EN-US>[tool]MidiStruct</span>タブを開き、先ほどの<span
+lang=EN-US>Midi</span>ファイルをドラッグ＆ドロップしたあと、<span lang=EN-US>Separate Midi</span>ボタンを押します</span></s><span
+style='font-family:"Meiryo UI"'>。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=299 height=175 id="図 22"
+src="tutorial.files/image018.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２１．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>書き出された</span><s><span
+lang=EN-US style='font-size:9.0pt;font-family:"Meiryo UI"'>foobar_separated.mid</span></s><s><span
+style='font-size:9.0pt;font-family:"Meiryo UI"'>を</span></s><span lang=EN-US
+style='font-family:"Meiryo UI"'>tanon_smf_red.mid</span><span style='font-family:
+"Meiryo UI"'>を<span lang=EN-US>red</span>プロジェクトに読み込みます。正しく音声が書き出される状態に修正します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=293 height=187 id="図 23"
+src="tutorial.files/image019.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２２．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>音声を書き出します。暇なら腹筋でもしてはいかがでしょうか。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=226 height=172 id="図 24"
+src="tutorial.files/image020.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２３．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>ヤッテヤルデス！</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=307 height=226 id="図 25"
+src="tutorial.files/image021.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２４．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>以前バックアップを取った<b><span
+lang=EN-US>.txt</span>形式のままの</b><span lang=EN-US>blue</span>の<span lang=EN-US>bms</span>と、新しく書き出された<span
+lang=EN-US>text6_bms.txt</span>を連結し、最低限必要な情報を追加して<span lang=EN-US>bms</span>ファイルとして保存します。これを<span
+lang=EN-US>renamed</span>フォルダにコピーします。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=346 height=246 id="図 26"
+src="tutorial.files/image022.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２５．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>BMS</span><span
+style='font-family:"Meiryo UI"'>プレイヤーで<span lang=EN-US>BMS</span>を開き、正常に変換されたかどうか確認します。正常に変換できていなかった場合はここからが本当の<span
+lang=EN-US>(ry</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;<img width=294 height=233 id="図 27"
+src="tutorial.files/image023.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２６．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>red</span><span
+style='font-family:"Meiryo UI"'>では「同じ音は１回」という原則に基づいて音切りをしたため、削除した音を復元する必要があります。そのため<span
+lang=EN-US>BMSE</span>や<span lang=EN-US>iBMSC</span>でノーツをコピーしなければなりません。ここは手作業になるため、面倒ですが頑張って下さい。自動化するための良い方法、ありませんかね。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph align=center style='margin-left:21.0pt;text-align:
+center'><span style='font-size:25.0pt;font-family:"Meiryo UI"'>第３章<span
+lang=EN-US> yellow head joe</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２７．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>最後に<span lang=EN-US>yellow</span>を配置したいと思います。<span
+lang=EN-US>yellow</span>は、手動で音切りをする方法と、全トラックの<span lang=EN-US>BGM</span>を合成した後で<span
+lang=EN-US>WaveKnife</span>を使って分割する方法が考えられます。今回は<span lang=EN-US>yellow</span>に相当するトラック数が多く繰り返しも少ないので後者を採用します</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２８．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>まず、<span lang=EN-US>BGM</span>に相当する範囲を書き出し範囲にセットし、<span
+lang=EN-US>wav</span>ファイルとして書き出します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=288 height=187 id="図 28"
+src="tutorial.files/image024.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>２９．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>[tool]WaveKnife</span><span
+style='font-family:"Meiryo UI"'>タブを開き、必要事項を入力して、<span lang=EN-US>Split</span>ボタンを押します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=301 height=193 id="図 29"
+src="tutorial.files/image025.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３０．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>WaveKnife</span><span
+style='font-family:"Meiryo UI"'>フォルダに書き出されたファイルが格納されます。このファイルの中身を確認し、必要に応じて無駄な無音部分を削除します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=284 height=176 id="図 30"
+src="tutorial.files/image026.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３１．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>以下の対応表を参考にし、<span
+lang=EN-US>BMSE</span>を用いて書き出された音を<span lang=EN-US>BMS</span>に配置します。※画像はイメージです</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>１音目から２音目までの拍数　＝　<span lang=EN-US>“Pre Beats” &#8211; “Crossfade Beats” </span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>２音目から３音目までの拍数　＝　<span lang=EN-US>“Interval Beats”</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>３音目から４音目までの拍数　＝　<span lang=EN-US>“Interval Beats”</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>以下同様</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=306 height=218 id="図 32"
+src="tutorial.files/image027.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３２．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>BMS</span><span
+style='font-family:"Meiryo UI"'>プレイヤーで<span lang=EN-US>BMS</span>を開き、正常に変換されたかどうか確認します。正常に変換できていなかった場合<span
+lang=EN-US>(ry</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'><img width=275 height=217 id="図 31"
+src="tutorial.files/image028.jpg"></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３３．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>もしここまでの作業が完了して配置していない音が残っている場合は、手動で配置します。これで残す作業は重複定義のみとなりました。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph align=center style='margin-left:21.0pt;text-align:
+center'><span style='font-size:25.0pt;font-family:"Meiryo UI"'>第４章<span
+lang=EN-US> Have a good dream.</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３４．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>すべての音が配置されていること、<span
+lang=EN-US>wav</span>ファイルが揃っていることを確認します。<span lang=EN-US>ogg</span>ファイルには対応していませんので、<span
+lang=EN-US>wav</span>ファイルに変換しておきましょう。<span lang=EN-US>Ogg</span>ファイルにしてしまった後でも問題ありません。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３５．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Meiryo UI"'>BMSE</span><span
+style='font-family:"Meiryo UI"'>で<span lang=EN-US>bms</span>を開き、<span
+lang=EN-US>File</span>メニューから<span lang=EN-US>Show Conversion Wizard</span>を開き、<span
+lang=EN-US>Sort Wave Definition List</span>（うろ覚え）を実行します。<span lang=EN-US>(</span>注：任意です<span
+lang=EN-US>)</span></span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３６．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Meiryo UI"'>必要事項を入力した後、<span
+lang=EN-US>DupeDef</span>ボタンをクリックします。</span></p>
+
+<p class=MsoListParagraph><span lang=EN-US style='font-family:"Meiryo UI"'><img
+width=328 height=196 id="図 33" src="tutorial.files/image029.jpg"></span></p>
+
+<p class=MsoListParagraph><span lang=EN-US style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:-21.0pt'><span
+lang=EN-US style='font-family:"Meiryo UI"'>３７．<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><s><span lang=EN-US style='font-family:"Meiryo UI"'>dupedef_text5_bms.txt</span></s><s><span
+style='font-family:"Meiryo UI"'>を</span></s><span lang=EN-US style='font-family:
+"Meiryo UI"'>dupedef_text5_bms.bms</span><span style='font-family:"Meiryo UI"'>にリネームし、書き出されたファイルの<span
+lang=EN-US>#TITLE</span>などを修正したあと、<span lang=EN-US>BMS</span>プレイヤーで再生確認します。</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>お疲れ様でした。いかがでしたか？ここまでたどり着いた皆さんならば、きっと、もう二度と<span lang=EN-US>BMS</span>を作ろうなどとは考えないだろうと思います。この経験を活かして、輝かしいビジネスパーソンとなっていただければ幸いです。それでは、さようなら。</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0mm 0mm 1.0pt 0mm;
+margin-left:21.0pt;margin-right:0mm'>
+
+<p class=MsoListParagraph style='margin-left:0mm;border:none;padding:0mm'><span
+lang=EN-US style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span style='font-family:
+"Meiryo UI"'>おまけ</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-size:16.0pt;font-family:"Meiryo UI"'>GoldWave</span><span
+style='font-size:16.0pt;font-family:"Meiryo UI"'>で音の末尾の無音を綺麗に削除する方法：</span></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>Batch Processing </span><span style='font-family:
+"Meiryo UI"'>で以下の内容を入力すると良いかもしれない</span></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set
+Marker/Selection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+[T-0] - [T-0]</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insert
+Silence&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.002</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set
+Marker/Selection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+[0] - [T-0]</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoTrim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.002s,
+-36.00dB, Trailing</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set
+Marker/Selection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+[T-0.002] - [T-0]</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Effect&nbsp; Fade
+Out &lt;GoldWave*&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Full
+volume to silence, linear</span></b></p>
+
+<p class=MsoListParagraph><b><span lang=EN-US style='font-family:"Meiryo UI"'>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoTrim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.000s,
+-90.00dB, Trailing</span></b></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt'><span lang=EN-US
+style='font-family:"Meiryo UI"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

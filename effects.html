@@ -1,0 +1,60 @@
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mid2BMS BMS Improved Development Environment</title>
+
+<script src="./jquery-1.11.0.min.js"></script>
+<script>
+// ref: http://www.geekzshu.com/jquery/626
+$(function(){
+	$('a img').not('[src*="'+ '_hover' +'."]').each(function() {
+		var src = $(this).attr('src');
+                var src_on = src.substr(0, src.lastIndexOf('.'))
+		 + '_hover'
+		 + src.substr(src.lastIndexOf('.'))
+		$(this).hover(
+			function() {
+				$(this).attr('src', src_on);
+			},
+			function() {
+				$(this).attr('src', src);
+			}
+		);
+	});
+});
+
+</script>
+
+<style><!--
+.hidimg {
+  display: none;
+}
+body {
+  background-image: url("./background_large.png");
+  background-attachment:fixed;
+  background-color:#79ACD4;
+  background-repeat:repeat-x;
+}
+--></style>
+
+</head>
+<body><div align="center">
+<br />
+<br />
+Mid2BMSにおける、聴覚上のエフェクトの分類<br>
+<br>
+<img src="effects.png">
+<hr>
+
+<small>
+<b><strike>注：FL Studio 及び Reaper でこのソフトを使用する場合のサポートは行いません。</strike></b><br />
+<b><span style="color:red;">
+  和音切りやクオンタイズ機能など、BMHelperと差別化できる機能も増えてきましたので、
+  2017/10/12を持ちまして、上記の発言を撤回したいと思います。
+  今後ともMid2BMSを宜しくお願いします。</span></b><br />
+Last Update: 2017/10/12<br />
+Since: 2014/04/01<br />
+Copyright (c) 2007-2017 <a href="https://twitter.com/yuinore">yuinore</a>
+</small>
+</div></body>
+</html>
