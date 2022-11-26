@@ -1,0 +1,188 @@
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mid2BMS BMS Improved Development Environment</title>
+
+<script src="./jquery-1.11.0.min.js"></script>
+<script>
+
+</script>
+
+<style><!--
+.hidimg {
+  display: none;
+}
+body {
+  background-image: url("./background_large.png");
+  background-attachment:fixed;
+  background-color:#79ACD4;
+  background-repeat:repeat-x;
+}
+--></style>
+
+</head>
+<body><table align="center"><tr><td><div align="left">
+ｷﾁの問題点など (Mid2BMS に関する良くある質問)<br />
+<br />
+
+<hr>
+このソフトの使い方が分からないという人はチュートリアルを読むといいかもしれません。（少々古いです）<br />
+Reasonを用いたチュートリアル ＞＞ <a href="http://mid2bms.web.fc2.com/tutorial.html">http://mid2bms.web.fc2.com/tutorial.html</a><br />
+<br />
+また、AOiRO_Manbow さんが Mid2BMS に関する記事を書いてくださっていたのでまず是非それを読みましょう。<br />
+Mid2BMSで出来ることと出来ないこと ＞＞ <i><b>mid2bmsがすごい</b> <a href="http://manbow.org/?p=121">http://manbow.org/?p=121</a></i><br />
+Sonarを用いたMid2BMSのチュートリアル(わかりやすい) ＞＞ <i><b>Mid2BMSでBMSを作る</b> <a href="http://manbow.org/?p=139">http://manbow.org/?p=139</a></i><br />
+<br />
+竜。さんがFL Studioを使ったチュートリアル動画を作成してくれました。<br />
+FL Studioを使っている方はこちらもどうぞ。<br />
+＞＞ <i><b>FL Studio+Mid2BMSでBMSを作る - ニコニコ動画</b>&nbsp;<a href="http://www.nicovideo.jp/watch/sm25555010">http://www.nicovideo.jp/watch/sm25555010</a></i><br />
+
+<hr>
+
+<a name="splitway" href="#splitway">
+ <big><b>Q. キー音分割の方法は？</b></big><br />
+ <big><b>Q. キー音分割のアルゴリズムを教えて下さい</b></big>
+</a><br />
+A. <b><u>無音部分を検出し、一定時間以上の無音で区切る方法です。</u></b><br />
+　BMHelperのような、時間による分割とは異なる方法です。<br />
+　メリットは、DAWでノートを左右に平行移動しても問題ないという点です。<br />
+　（あと、実装・コーディングが楽だという点）<br />
+　デメリットは、誤判定・誤分割が（恐らく）多いという点と、<br />
+　<b>単音wav</b>（Mid2BMSから書き出したmidiをDAWに読み込ませ、それを書き出したwav）が<br />
+　より長くなる傾向にあるという点です。<br />
+<hr>
+
+<strike>
+<big><b><a name="whyflnot" href="#whyflnot">Q. なぜFL Studioはサポートされていないのですか。</a></b></big><br />
+A. それには２つの理由があります。<br />
+　1つ目は、FL Studioがオートメーションの書き出しを行えない(FL Studio 9現在)ため、<br />
+　red modeを使用することが出来ないということ、<br />
+　2つ目は、FL Studioがmidiファイルの複数トラックを同時に読み込むことが出来ないということです。<br />
+　そして、これらの点は、Be-Music Helper (注：姉妹ソフト)を使う場合と比べた時の<br />
+　Mid2BMSを使う利点を非常に微妙なものにします。<br />
+　つまり端的に言えば「私がFL Studioにｲﾗｯとした」というのが<br />
+　FL Studioをサポートしないということにした真の理由であって、<br />
+　「FL Studioはサポートしない」というのは、<br />
+　「FL Studioを使っている人はMid2BMSを使う意味があまり無い」ということであり、<br />
+　<b>「FL Studioを使っている人の質問は受け付けない」という意味ではありませんし、<br />
+　「FL StudioでMid2BMSを使ってはいけない」という意味でもありません。</b><br />
+　何か質問がある場合は <a href="https://twitter.com/yuinore">@yuinore</a> までお気軽にどうぞ。<br />
+</strike>
+<b><span style="color:red">忘れてください・・・</span></b><br />
+<hr>
+
+<big><b><a name="couldnotsplit1" href="#couldnotsplit1">Q. 正しく音切りが出来ていなかった。</a></b></big><br />
+A. 解決方法は2つあります。<br />
+　1つ目は、<b>[2]WaveSplitter</b>タブの、<b>Silence Time</b>の項目を変更することです。<br />
+　・もし、キー音が不足していて、「正しく音切りがされていない可能性があります」という<br />
+　　エラーメッセージが出た場合は、Silence Timeの値を小さくして下さい。<br />
+　　0.75秒、0.70秒、0.60秒、0.50秒・・・と段階的に小さくしていくのが良いでしょう。<br />
+　　ただし、この値を小さくしすぎると、キー音の途中で分割されて2つのキー音になってしまう場合があります。<br />
+　・もし、そうではない、つまり「書き出されたキー音の個数」が「必要なキー音の個数」と一致している場合は、<br />
+　　Silence Timeの値を大きくして下さい。<br />
+　　0.75秒、1.00秒、1.25秒、1.50秒・・・と段階的に大きくしていくのが良いでしょう。<br />
+　　ただし、この値を大きくしすぎると、複数のキー音が結合されて1つのキー音になってしまうので注意です。<br />
+　この方法ですが、そもそも正しくキー音に分割できるようなSilence Timeの値が存在しない場合があります。<br />
+　その場合は、次に示す2つ目の方法を試してみてください。<br />
+<br />
+　2つ目は、<b>[1]Mid2MML</b>タブの、<b>MarginTime</b>の項目を、より大きな値に変更することです。<br />
+　単位は「拍」で、ノート同士の間隔時間を表します。<br />
+　12拍、16拍、20拍、24拍・・・と段階的に大きくしていくのが良いでしょう。<br />
+　デメリットは、この値を大きくしすぎると、書き出しに多くの時間が掛かるようになってしまう点と、<br />
+　もう一度midi書き出しからやり直さなければならない点です。<br />
+<hr>
+
+<big><b><a name="couldnotsplit2" href="#couldnotsplit2">Q. 正しく音切りが出来ていなかった。(BPMが200を大きく超える場合)</a></b></big><br />
+A. それはバグですが解決策があります。<br />
+　音と音の間隔を長く指定する必要があります。<br />
+　<b>[1]Mid2MML</b>タブを開き、MarginTimeの値を <b>BPM / 10</b> くらいの値に設定して、<br />
+　midiファイルの生成からやり直してください。<br />
+<hr>
+
+<a name="writeautom" href="#writeautom">
+ <big><b>Q. オートメーションをmidiファイルに書き出す方法が分かりません。</b></big><br />
+ <big><b>Q. コントロールチェンジの変化をmidiファイルに書き出す方法が分かりません。</b></big><br />
+</a>
+A. DAWにより方法が異なります。<br />
+　・Propellerhead Reason の場合(Reason 4, 6で確認)<br />
+　　　普通にいけるかと。<br />
+　　　ただし、midi書き出しされるオートメーションとされないオートメーションの種類があるようです。<br />
+　・Sonar の場合(Sonar X1で確認)<br />
+　　　普通にいけるかと。<br />
+　・FL Studio の場合<br />
+　　　<b>多分無理だと思います諦めてください。</b><br />
+　　　私はred modeを使うのを諦めて、woslicerIIのような方法で音切りしました。<br />
+　・Reaper の場合<br />
+　　　分かりませんでした・・・。<br />
+　　　<strike>Midi OX と LoopBe1 を使えば出来るかもしれないですけどちょっと分かりません。<br />
+　　　仮に出来たとしてもその手間は割に合わないでしょう。<br />
+　　　参考URL1：<a href="http://forum.cockos.com/showthread.php?t=17624">http://forum.cockos.com/showthread.php?t=17624</a><br />
+　　　参考URL2：<a href="http://blog.livedoor.jp/setsuna_novi/archives/50431813.html">http://blog.livedoor.jp/setsuna_novi/archives/50431813.html</a><br />
+　　　Midi-Yokeは64bitだとReaperと相性が良くないようなのでLoopBe1を使いましょう？</strike><br />
+　　　オートメーション(Automation Lane)をMidi CCに変換することが出来なかったため解決出来ずに終了。<br />
+　　　下のリンクに書いてある方法で出来るらしいですが私は断念しました。<br />
+　　　参考URL3：<a href="http://forum.cockos.com/showthread.php?t=98786">http://forum.cockos.com/showthread.php?t=98786</a><br />
+　・その他<br />
+　　　適宜加筆する予定<br />
+<hr>
+
+<big><b><a name="toomanykeys" href="#toomanykeys">Q. キー音の数が多すぎます。(和音を多用している場合)</a></b></big><br />
+A. Chord Modeを指定すると解決する可能性があります。<br />
+　トラック名の確認のダイアログ(音色名が書いてある表が出てくる画面)において、<br />
+　Chord?と書かれているチェックボックスをONにするとChord Modeにすることが出来ます。<br />
+<hr>
+
+<a name="reducevelo" href="#reducevelo">
+ <big><b>Q. ベロシティの種類を減らしたい。</b></big><br />
+ <big><b>Q. ベロシティをすべてnの倍数にしたい。</b></big><br />
+</a>
+A. DAWにより方法が異なります。(例：ベロシティを 2 の倍数にする場合)<br />
+　・<a href="./velquantization.png">Mid2BMS に搭載されている機能を利用する場合 ← New!!</a>（クリックで画像を表示）<br />
+　・Propellerhead Reason の場合<br />
+　　　F8を押して出てくるパネルの「ベロシティ」欄で「スケール50%」→「スケール200%」という操作を行う。<br />
+　・その他<br />
+　　　適宜加筆する予定<br />
+<hr>
+
+<big><b><a name="toobigsize" href="#toobigsize">Q. 最終的な全キー音のファイルサイズが大きすぎます。(残響部分が長すぎる場合)</a></b></big><br />
+A. チュートリアルの最後に示したGold Waveのバッチを使うのが最もよいですが、<br />
+　それ以外の明確な解決方法はわかっていません。<br />
+　そのうち、その機能をMid2BMS内に実装するかもしれませんし、しないかもしれません。<br />
+<hr>
+
+<big><b><a name="toolong1" href="#toolong1">Q. 書き出し時間が長すぎる。</a></b></big><br />
+A. <b>[1]Mid2MML</b>タブの、<b>MarginTime</b>の項目を、4〜8程度の値に変更して下さい。<br />
+　単位は「拍」で、ノート同士の間隔時間を表します。<br />
+　また、同時に、<b>[2]WaveSplitter</b>タブの、<b>Silence Time</b>の項目を、必要に応じて小さくして下さい。<br />
+　Silence Timeの値を小さくしすぎると、キー音の途中で分割されて2つのキー音になってしまう場合があります。<br />
+　逆に大きくしすぎると、複数のキー音が結合されて1つのキー音になってしまいます。<br />
+　MarginTimeの値が小さすぎる場合、正しくキー音に分割できるようなSilence Timeの値が存在しない場合があります。<br />
+　<u>この設定を行う手間は、割に合わないかもしれません。</u><br />
+<hr>
+
+<big><b><a name="toolong2" href="#toolong2">Q. 書き出し時間が長すぎる。(外部音源を使用している場合)</a></b></big><br />
+A. ファーーーーーｗｗｗｗｗｗｗ<br />
+　コーヒーでも飲みながら寝ていて下さい・・・。<br />
+<hr>
+
+<big><b><a name="wrongeng" href="#wrongeng">Q. 英語が間違ってます。</a></b></big><br />
+A. I think that it not big question.<br />
+　気付いたら@yuinoreまでリプライを送って頂ければ直します。<br />
+<hr>
+
+<big><b><a name="purplebug" href="#purplebug">Q. purpleモードのとき、「正しく音切り出来ていない可能性があります」ってなる</a></b></big><br />
+A. 些細なバグです。聞いて問題なければ大丈夫です。<br />
+<hr>
+
+<small>
+<b><strike>注：FL Studio 及び Reaper でこのソフトを使用する場合のサポートは行いません。</strike></b><br />
+<b><span style="color:red;">
+  和音切りやクオンタイズ機能など、BMHelperと差別化できる機能も増えてきましたので、
+  2017/10/12を持ちまして、上記の発言を撤回したいと思います。
+  今後ともMid2BMSを宜しくお願いします。</span></b><br />
+Last Update: 2017/10/12<br />
+Since: 2014/04/01<br />
+Copyright (c) 2007-2017 <a href="https://twitter.com/yuinore">yuinore</a>
+</small>
+</div></body>
+</html>
