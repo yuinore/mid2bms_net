@@ -5,6 +5,6 @@
 ```bash
 yarn install
 
-TMPDIR=$(mktemp -d) ; rm -rf dist/ ; cp -R * $TMPDIR ; mv $TMPDIR dist/
-yarn gh-pages -d dist/
+git checkout master
+yarn gh-pages -d src/
 ```
