@@ -7,20 +7,20 @@
 <script>
 // ref: http://www.geekzshu.com/jquery/626
 $(function(){
-	$('a img').not('[src*="'+ '_hover' +'."]').each(function() {
-		var src = $(this).attr('src');
+  $('a img').not('[src*="'+ '_hover' +'."]').each(function() {
+    var src = $(this).attr('src');
                 var src_on = src.substr(0, src.lastIndexOf('.') - 7)
-		 + '_hover'
-		 + src.substr(src.lastIndexOf('.'))
-		$(this).hover(
-			function() {
-				$(this).attr('src', src_on);
-			},
-			function() {
-				$(this).attr('src', src);
-			}
-		);
-	});
+     + '_hover'
+     + src.substr(src.lastIndexOf('.'))
+    $(this).hover(
+      function() {
+        $(this).attr('src', src_on);
+      },
+      function() {
+        $(this).attr('src', src);
+      }
+    );
+  });
 });
 
 </script>
